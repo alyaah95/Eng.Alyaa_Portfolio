@@ -1,0 +1,74 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-primary);
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+    background-color: var(--bg-primary);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.App {
+    text-align: left;
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--light-gray);
+}
+
+::-webkit-scrollbar-thumb {
+    background: #a7a9ab;
+    border-radius: var(--radius-sm);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #7d7f81;
+}
+
+/* Selection color */
+::selection {
+    background-color: var(--accent-light);
+    color: var(--accent-color);
+}
+
+::-moz-selection {
+    background-color: var(--accent-light);
+    color: var(--accent-color);
+}
+
+/* Focus outline */
+*:focus-visible {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+/* Remove default button styles */
+button {
+    font-family: inherit;
+}
+
+/* Link styles */
+a {
+    color: var(--accent-color);
+    transition: color var(--transition-base);
+}
+
+a:hover {
+    color: var(--accent-hover);
+}

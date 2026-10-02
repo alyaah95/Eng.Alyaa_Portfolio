@@ -1,0 +1,69 @@
+:root {
+    /* 🎨 Gradient Brand Colors - المزيج السحري من الصورة الأصلية */
+    /* تقدري تستخدمي المتغير ده مباشرة في الخلفيات أو النصوص كمزيج */
+    --accent-gradient: linear-gradient(135deg, #EC4899 1%, #6f57a5 35%, #F43F5E 100%);
+    /* مزيج احترافي بين الفوشيا، الموف، والوردي المشرق */
+
+    /* تفكيك الألوان الأساسية للمزيج للاستخدامات المنفصلة */
+    --accent-color: #EC4899;
+    /* الفوشيا المشرق كركيزة أساسية تلفت العين */
+    --accent-purple: #8B5CF6;
+    /* الموف التقني لعمل التوازن */
+    --accent-hover: #D946EF;
+    /* درجة مضيئة وميكس بينهم ممتاز للـ Hover */
+
+    /* درجات الشفافية (Opacities) للتطعيمات الخفيفة جداً بدون زحمة */
+    --accent-light: rgba(236, 72, 153, 0.08);
+    /* لمسة فوشيا خفيفة للأيقونات */
+    --accent-light-purple: rgba(139, 92, 246, 0.08);
+    /* لمسة موف خفيفة للتنويع */
+
+    /* 📝 Text Colors - نظافة متناهية وتباين عالي */
+    --text-primary: #0F172A;
+    /* كحلي داكن جداً (Slate 900) مريح وممتاز للقراءة */
+    --text-secondary: #475569;
+    /* رمادي متوازن للشروحات والفقرات */
+    --text-muted: #94A3B8;
+    /* رمادي فاتح للتفاصيل الجانبية والتواريخ */
+
+    /* 🤍 Background Colors - النضافة والاتساع */
+    --bg-primary: #FFFFFF;
+    /* أبيض صريح عشان تظهر ألوان مشاريعك بوضوح */
+    --bg-secondary: #F8FAFC;
+    /* رمادي بارد خفيف جداً لفصل الأقسام */
+    --bg-tertiary: #FFF5F7;
+    /* مسحة دافئة جداً باهتة مشتقة من المزيج لكسر الملل */
+
+    /* ✨ Shadows - تأثير الإضاءة الناعمة (Glow) */
+    /* استخدمنا دمج بين الفوشيا والموف في الظل عشان يدي إحساس إن الكروت بتعكس ألوان الجراديانت بنعومة */
+    --shadow-sm: 0 1px 2px rgba(236, 72, 153, 0.02);
+    --shadow-md: 0 4px 16px rgba(139, 92, 246, 0.05);
+    --shadow-lg: 0 10px 30px rgba(236, 72, 153, 0.08);
+
+    /* 📐 Typography */
+    --font-primary: 'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+
+    /* 📏 Spacing Scale */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 0.75rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    --spacing-2xl: 3rem;
+    --spacing-3xl: 4rem;
+
+    /* 🔲 Border Radius */
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 14px;
+    --radius-xl: 20px;
+
+    /* ⚡ Transitions */
+    --transition-fast: 150ms ease;
+    --transition-base: 250ms ease;
+    --transition-slow: 350ms ease;
+}

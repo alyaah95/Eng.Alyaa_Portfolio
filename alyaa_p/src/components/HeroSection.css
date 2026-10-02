@@ -1,0 +1,196 @@
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 8rem 0 var(--spacing-3xl);
+    overflow: hidden;
+    background-color: var(--bg-primary);
+}
+
+.hero-content {
+    padding: var(--spacing-xl);
+    position: relative;
+    z-index: 2;
+}
+
+.hero-subtitle {
+    color: var(--text-secondary);
+    font-weight: var(--font-weight-semibold);
+    margin-bottom: var(--spacing-md);
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    display: inline-block;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--spacing-lg);
+    color: var(--text-color);
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+}
+
+.hero-text {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-2xl);
+    max-width: 90%;
+    line-height: 1.7;
+    letter-spacing: -0.01em;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+}
+
+.hero-buttons .btn {
+    padding: 0.875rem 2rem;
+    border-radius: var(--radius-md);
+    font-weight: var(--font-weight-semibold);
+    transition: all var(--transition-base);
+    border: 2px solid transparent;
+    font-size: 0.9375rem;
+    letter-spacing: -0.01em;
+}
+
+.hero-buttons .projects-btn {
+    background: #47556952;
+    border-color: #4755690b;
+    color: var(--bg-primary);
+}
+
+.hero-buttons .projects-btn:hover {
+    background: #fba3cfdc;
+    border-color: #fba3cfdc;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+    color: var(--bg-primary);
+}
+
+.hero-buttons .linkedin-btn {
+    color: var(--text-primary);
+    border-color: var(--border-gray);
+    background: transparent;
+}
+
+.hero-buttons .linkedin-btn:hover {
+    background: var(--text-color);
+    border-color: #d797b7;
+    color:#d797b7;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.hero-image {
+    position: relative;
+    z-index: 2;
+    transform: translate(102px, -108px);
+}
+
+.hero-image img {
+    max-width: 98%;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-xl);
+    border: 1px solid var(--border-gray);
+}
+
+.hero-decoration {
+    position: absolute;
+    z-index: 0;
+    opacity: 0.04;
+    background-color: var(--accent-color);
+    border-radius: 50%;
+}
+
+.decoration-1 {
+    top: 15%;
+    right: 10%;
+    width: 300px;
+    height: 300px;
+}
+
+.decoration-2 {
+    bottom: 20%;
+    left: 5%;
+    width: 200px;
+    height: 200px;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .hero-title {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .hero-section {
+        padding: 7rem 0 var(--spacing-2xl);
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-content {
+        text-align: center;
+        padding: var(--spacing-md);
+    }
+
+    .hero-title {
+        font-size: 2.25rem;
+    }
+
+    .hero-text {
+        margin: 0 auto var(--spacing-xl);
+        font-size: 1rem;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-decoration {
+        display: none;
+    }
+
+    .hero-image {
+        transform: translate(0, 0);
+        /* 1. صَفّرنا الإحداثيات الكبيرة عشان ما ترحلش الصورة يمين وفوق */
+        text-align: center;
+        /* 2. يضمن سنترة الصورة لو الحاوية أوسع منها */
+        margin: var(--spacing-xl) auto 0;
+        /* 3. بيدي مسافة ناعمة من فوقها (بينها وبين الأزرار) ويسنترها أفقياً */
+        width: 100%;
+    }
+
+    .hero-image img {
+        max-width: 85%;
+        /* 4. صغرنا النسبة شوية عشان تطلع شيك ومتناسقة مع أبعاد الموبايل */
+        display: inline-block;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .hero-buttons .btn {
+        padding: 0.75rem 1.5rem;
+        width: 100%;
+        max-width: 280px;
+    }
+}

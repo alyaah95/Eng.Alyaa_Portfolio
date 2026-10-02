@@ -1,0 +1,125 @@
+/* Navbar.css */
+
+.custom-navbar {
+    padding: 1.25rem 0;
+    background-color: rgba(255, 255, 255, 0.98) !important;
+    backdrop-filter: blur(12px);
+    box-shadow: var(--shadow-sm);
+    border-bottom: 1px solid var(--bg-secondary);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: padding var(--transition-base), box-shadow var(--transition-base);
+}
+
+.custom-navbar.scrolled {
+    padding: 0.875rem 0;
+    box-shadow: var(--shadow-md);
+}
+
+.custom-navbar .navbar-brand {
+    font-weight: var(--font-weight-bold);
+    font-size: 1.625rem;
+    color: var(--text-secondary) !important;
+    letter-spacing: -0.02em;
+    transition: color var(--transition-base);
+    cursor: pointer;
+}
+
+.custom-navbar .navbar-brand:hover {
+    color: var(--text-primary) !important;
+}
+
+/* ─── Base nav-link state ─── */
+.custom-navbar .nav-link {
+    /* Reset ALL Bootstrap active/focus overrides */
+    color: var(--text-secondary) !important;
+    font-weight: var(--font-weight-medium);
+    margin: 0 var(--spacing-md);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    font-size: 0.9375rem;
+    letter-spacing: -0.01em;
+    position: relative;
+    display: inline-block;
+
+    /* Critical: ensure these are always reset so -webkit-text-fill-color
+       can never "stick" from a previous active/hover/focus state */
+    background: transparent !important;
+    -webkit-background-clip: initial !important;
+    -webkit-text-fill-color: var(--text-secondary) !important;
+    transition: -webkit-text-fill-color var(--transition-base);
+
+    transition: color 0.4s ease-in-out, -webkit-text-fill-color 0.4s ease-in-out;
+}
+
+/* ─── Kill ALL browser-native states that could leave stale styles ─── */
+.custom-navbar .nav-link:focus,
+.custom-navbar .nav-link:focus-visible,
+.custom-navbar .nav-link:active,
+/* Also target Bootstrap's own .active class just in case it slips through */
+.custom-navbar .nav-link.active {
+    background: transparent !important;
+    -webkit-background-clip: initial !important;
+    -webkit-text-fill-color: var(--text-secondary) !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+/* ─── Hover state ─── */
+.custom-navbar .nav-link:hover {
+    background: var(--accent-color) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+}
+
+/* ─── Our custom active class (set only via React state) ─── */
+.custom-navbar .nav-link.nav-link-active {
+    background: var(--accent-color) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    transition: -webkit-text-fill-color 0.4s ease-in-out;
+}
+
+/* ─── Underline for hover + active ─── */
+.custom-navbar .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--accent-color);
+    transition: width var(--transition-base);
+    border-radius: 2px;
+    transition: width 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.custom-navbar .nav-link:hover::after,
+.custom-navbar .nav-link.nav-link-active::after {
+    width: 100%;
+}
+
+/* ─── Mobile ─── */
+@media (max-width: 992px) {
+    .custom-navbar {
+        padding: 1rem 0;
+    }
+
+    .custom-navbar .navbar-brand {
+        font-size: 1.5rem;
+    }
+
+    .custom-navbar .nav-link {
+        margin: var(--spacing-xs) 0;
+        padding: var(--spacing-sm) var(--spacing-md);
+        /* On mobile the link is block-level; make sure gradient text still works */
+        display: block;
+    }
+
+    .custom-navbar .nav-link::after {
+        left: 0;
+        transform: none;
+    }
+}
