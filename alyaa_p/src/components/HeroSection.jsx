@@ -1,5 +1,6 @@
 import React from 'react';
 import heroImage from '../assets/personal-image.jpg';
+import alyaa from '../assets/alyaa2.png';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import './HeroSection.css';
 
@@ -16,15 +17,15 @@ const HeroSection = () => {
         <Row className="align-items-center">
           <Col lg={6}>
             <div className="hero-content">
-              <h5 className="hero-subtitle">Full-Stack Web Developer</h5>
-              <h1 className="hero-title">Hello, my name is Lamyaa Atef</h1>
+              <h5 className="hero-subtitle">Full-Stack Software Engineer</h5>
+              <h1 className="hero-title">Hello, my name is Alyaa Hassan.</h1>
               <p className="hero-text">
-                A Full-Stack Web Developer specialized in building dynamic and effective applications. I have hands-on experience developing a complete electronic booking system similar to Booking.com using Node.js, React, and MongoDB. A graduate of the ITI web development track, I am proficient in both frontend and backend development, with a focus on high-performance solutions and exceptional user experience.
+                A Full-Stack Software Engineer specialized in building dynamic, scalable, and data-driven applications. I have hands-on experience developing end-to-end web solutions—including a complete hotel booking platform using Node.js, React, and MongoDB—as well as robust enterprise systems with Django and modern Data Engineering pipelines. A graduate of the Information Technology Institute (ITI), I am proficient in both frontend and backend development, focusing on clean architecture, high-performance solutions, and exceptional user experience.
               </p>
               <div className="hero-buttons">
                 <Button variant="primary" className="projects-btn" onClick={scrollToProjects}>Projects</Button>
                 <a 
-                  href="https://www.linkedin.com/in/lamyaaatef/" 
+                  href="https://www.linkedin.com/in/alyaa-hassan" 
                   target="_blank" 
                   rel="noopener noreferrer"
                 >
@@ -38,8 +39,8 @@ const HeroSection = () => {
           <Col lg={6} className="text-center">
             <div className="hero-image">
               <img 
-                src={heroImage} 
-                alt="Madelyn Torff" 
+                src={alyaa} 
+                alt="Alyaa Hassan" 
                 className="img-fluid"
               />
             </div>

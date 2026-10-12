@@ -4,17 +4,17 @@ import './Skills.css';
 
 const SkillsSection = () => {
   const skills = [
-    { name: 'Node.js', percentage: 90 },
-    { name: 'Python', percentage: 75 },
-    { name: 'PHP', percentage: 90 },
-    { name: 'HTML & CSS', percentage: 100 },
-    { name: 'JavaScript', percentage: 95 },
-    { name: 'React', percentage: 80 },
-    { name: 'MySQL', percentage: 80 },
-    { name: 'MongoDB', percentage: 70 },
-    { name: 'WordPress', percentage: 90 },
-    { name: 'Git & GitHub', percentage: 70 }
-  ];
+  { name: 'JavaScript (ES6+)', percentage: 90 },
+  { name: 'React.js', percentage: 88 },
+  { name: 'Node.js & Express', percentage: 85 },
+  { name: 'Python & Django', percentage: 85 },
+  { name: 'HTML5 & CSS3', percentage: 95 },
+  { name: 'PostgreSQL & Databases', percentage: 82 },
+  { name: 'MongoDB', percentage: 80 },
+  { name: 'Docker & DevOps Tools', percentage: 75 },
+  { name: 'Git & GitHub', percentage: 90 },
+  { name: 'REST APIs & UI/UX', percentage: 88 }
+];
 
   return (
     <section id="skills" className="skills-section">
@@ -34,7 +34,6 @@ const SkillsSection = () => {
               <div className="skill-item">
                 <div className="skill-info">
                   <span className="skill-name">{skill.name}</span>
-                  <span className="skill-percentage">{skill.percentage}%</span>
                 </div>
                 <div className="skill-progress">
                   <div 
@@ -52,12 +51,12 @@ const SkillsSection = () => {
             <div className="additional-skills">
               <h4 className="additional-title">Additional Skills</h4>
               <div className="skills-tags">
-                <span className="skill-tag">Continuous Learning</span>
-                <span className="skill-tag">Collaboration and Effective Communication</span>
-                <span className="skill-tag accent">Understanding UX/UI</span>
-                <span className="skill-tag">Problem Solving</span>
-                <span className="skill-tag">Attention to Detail</span>
-              </div>
+              <span className="skill-tag">System Architecture</span>
+              <span className="skill-tag accent">Analytical Thinking</span>
+              <span className="skill-tag">Cross-functional Collaboration</span>
+              <span className="skill-tag">Debugging & Troubleshooting</span>
+              <span className="skill-tag">Problem Solving</span>
+            </div>
             </div>
           </Col>
         </Row>

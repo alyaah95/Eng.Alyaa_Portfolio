@@ -133,11 +133,11 @@ const ContactSection = () => {
             <div className="contact-info">
               <div className="contact-item">
                 <i className="fas fa-envelope"></i>
-                <span>lamiaaatef152002@gmail.com</span>
+                <span>eng.alyaahassan@gmail.com</span>
               </div>
               <div className="contact-item">
                 <i className="fas fa-phone"></i>
-                <span>+201288344120</span>
+                <span>+20 121 002 1361</span>
               </div>
               <div className="contact-item">
                 <i className="fas fa-map-marker-alt"></i>
@@ -150,10 +150,10 @@ const ContactSection = () => {
         <Row className="mt-4">
           <Col lg={12}>
             <div className="social-links">
-              <a href="https://www.linkedin.com/in/lamyaa-atef/" className="social-link">
+              <a href="https://www.linkedin.com/in/alyaa-hassan" className="social-link">
                 <i className="fab fa-linkedin"></i>
               </a>
-              <a href="https://github.com/lamyaa-atef" className="social-link">
+              <a href="https://github.com/alyaah95" className="social-link">
                 <i className="fab fa-github"></i>
               </a>
             </div>
@@ -163,7 +163,7 @@ const ContactSection = () => {
         <Row className="mt-4">
           <Col lg={12}>
             <div className="footer-bottom">
-              <p>&copy; 2024 Madelyn Torff. All rights reserved.</p>
+              <p>&copy; 2026 Alyaa Hassan. All rights reserved.</p>
             </div>
           </Col>
         </Row>

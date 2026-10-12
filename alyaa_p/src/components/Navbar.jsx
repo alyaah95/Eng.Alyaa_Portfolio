@@ -89,7 +89,7 @@ const Navbar = () => {
     <BSNavbar expand="lg" className={`custom-navbar${scrolled ? ' scrolled' : ''}`}>
       <Container>
         <BSNavbar.Brand onClick={(e) => handleNavClick(e, 'about')} href="#about">
-          Alyaa Atef
+          Alyaa Hassan
         </BSNavbar.Brand>
         <BSNavbar.Toggle aria-controls="basic-navbar-nav" />
         <BSNavbar.Collapse id="basic-navbar-nav">
