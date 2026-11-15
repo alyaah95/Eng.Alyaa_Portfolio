@@ -1,5 +1,6 @@
 .hero-section {
     min-height: 100vh;
+    min-height: 100svh;
     display: flex;
     align-items: center;
     position: relative;
@@ -25,7 +26,7 @@
 }
 
 .hero-title {
-    font-size: 3.5rem;
+    font-size: clamp(2rem, 1.2rem + 3.5vw, 3.5rem);
     font-weight: var(--font-weight-bold);
     margin-bottom: var(--spacing-lg);
     color: var(--text-color);
@@ -89,16 +90,16 @@
 .hero-image {
     position: relative;
     z-index: 2;
-    transform: translate(102px, -108px);
+    text-align: center;
+    margin-top: var(--spacing-xl);
 }
 
 .hero-image img {
-    max-width: 70%;
+    max-width: min(85%, 420px);
     border-radius: 20px;
     box-shadow: var(--shadow-xl);
     border: 1px solid var(--border-gray);
-    margin-left: 60px;
-    margin-top: 166px;
+    display: inline-block;
 }
 
 .hero-decoration {
@@ -124,75 +125,91 @@
 }
 
 /* Responsive Design */
-@media (max-width: 1200px) {
-    .hero-title {
-        font-size: 3rem;
-    }
-}
+
 
 @media (max-width: 992px) {
     .hero-section {
         padding: 7rem 0 var(--spacing-2xl);
     }
 
-    .hero-title {
-        font-size: 2.5rem;
+
+
+    .hero-image {
+        margin-top: 0;
+        transform: translate(102px, -108px);
+    }
+
+    .hero-image img {
+        max-width: 70%;
+        margin-left: 60px;
+        margin-top: 166px;
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 991.98px) {
     .hero-content {
         text-align: center;
         padding: var(--spacing-md);
     }
 
-    .hero-title {
-        font-size: 2.25rem;
-    }
-
     .hero-text {
         margin: 0 auto var(--spacing-xl);
-        font-size: 1rem;
+        max-width: 100%;
     }
 
     .hero-buttons {
         justify-content: center;
     }
+}
 
+@media (max-width: 768px) {
     .hero-decoration {
         display: none;
     }
 
-    .hero-image {
-        transform: translate(0, 0);
-        /* 1. صَفّرنا الإحداثيات الكبيرة عشان ما ترحلش الصورة يمين وفوق */
-        text-align: center;
-        /* 2. يضمن سنترة الصورة لو الحاوية أوسع منها */
-        margin: var(--spacing-xl) auto 0;
-        /* 3. بيدي مسافة ناعمة من فوقها (بينها وبين الأزرار) ويسنترها أفقياً */
-        width: 100%;
+    .hero-text {
+        font-size: 1rem;
     }
-
-    .hero-image img {
-        max-width: 85%;
-        /* 4. صغرنا النسبة شوية عشان تطلع شيك ومتناسقة مع أبعاد الموبايل */
-        display: inline-block;
-    }
+    
 }
 
 @media (max-width: 576px) {
-    .hero-title {
-        font-size: 2rem;
-    }
 
     .hero-buttons {
-        flex-direction: column;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+    
+    .hero-buttons a {
         width: 100%;
+        max-width: 280px;
     }
 
     .hero-buttons .btn {
         padding: 0.75rem 1.5rem;
         width: 100%;
         max-width: 280px;
+    }
+}
+
+/* Tablet + Mobile: center the hero image */
+@media (max-width: 991.98px) {
+    .hero-image {
+        transform: none;
+        /* cancels translate(102px, -108px) */
+        display: flex;
+        justify-content: center;
+        /* horizontal centering */
+        width: 100%;
+        margin: var(--spacing-xl) auto 0;
+    }
+
+    .hero-image img {
+        display: block;
+        margin: 0 auto;
+        /* cancels margin-left: 60px / margin-top: 166px */
+        max-width: min(85%, 420px);
+        height: auto;
     }
 }

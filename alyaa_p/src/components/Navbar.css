@@ -102,7 +102,7 @@
 }
 
 /* ─── Mobile ─── */
-@media (max-width: 992px) {
+@media (max-width: 991.98px) {
     .custom-navbar {
         padding: 1rem 0;
     }
@@ -121,5 +121,11 @@
     .custom-navbar .nav-link::after {
         left: 0;
         transform: none;
+    }
+
+    .custom-navbar .navbar-collapse {
+        max-height: calc(100vh - 80px);
+        max-height: calc(100dvh - 80px);
+        overflow-y: auto;
     }
 }

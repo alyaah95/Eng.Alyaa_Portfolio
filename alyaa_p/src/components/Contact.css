@@ -1,5 +1,5 @@
 .contact-section {
-    scroll-margin-top: var(--spacing-xl);
+    scroll-margin-top: 80px;
     padding: var(--spacing-3xl) 0 var(--spacing-xl);
     background-color: var(--bg-secondary);
     border-top: 1px solid var(--border-gray);
@@ -208,9 +208,21 @@
     }
 }
 
+.contact-item {
+    min-width: 0;
+}
+
+.contact-item span {
+    overflow-wrap: anywhere;
+}
+
+
 @media (max-width: 576px) {
     .contact-title {
         font-size: 1.875rem;
+    }
+    .contact-info {
+        gap: var(--spacing-md);
     }
 
     .contact-subtitle {

@@ -23,6 +23,7 @@ const ProjectsSection = () => {
       video: "https://res.cloudinary.com/dg4tzyfar/video/upload/v1791744391/egyptia_nfeohx.mp4", // حطي مسار الفيديو لو موجود
       link: "https://egyptia-two.vercel.app/",
       github: "https://github.com/alyaah95/my_chatbot", // استبدلي بلينك الجيت هاب بتاعك
+      credentials: null,
       overview: "Egyptia is an intelligent educational platform that digitizes Egyptian history and geography. It features interactive dynamic SVG maps displaying territorial borders across historical eras. The platform integrates a Retrieval-Augmented Generation (RAG) chatbot using Groq API that answers complex historical queries based on curated documents, with an automated web-search fallback.",
       challenges: [
         "Building a custom RAG architecture using Flask and Groq API to query vector-indexed historical documents.",
@@ -39,6 +40,17 @@ const ProjectsSection = () => {
       video: "https://res.cloudinary.com/dg4tzyfar/video/upload/v1791713038/govInspect_completed_sarp1l.mp4",
       link: "https://gov-inspect-system.vercel.app/",
       github: "https://github.com/alyaah95/GovInspectSystem",
+      credentials: {
+        "Manager Account": {
+          "Username": "hassan",
+          "Password": "hassan.govinspect.eg"
+        },
+        "Inspector Account": {
+          "Username": "alaa.atef",
+          "Password": "alaa.govinspect.eg"
+        }
+
+      },
       overview: "GovInspect digitizes and automates manual field inspection processes for government agencies. Built with Django and Neon PostgreSQL, it features Multi-Tiered Role-Based Access Control (Tech Admins, Field Directors, and Field Inspectors). Directors assign facilities to inspectors, while inspectors submit digital reports on-site for real-time review, verification, and automated archiving.",
       challenges: [
         "Designing a granular Role-Based Access Control (RBAC) system for multi-tier management.",
@@ -55,6 +67,10 @@ const ProjectsSection = () => {
       video: "https://res.cloudinary.com/dg4tzyfar/video/upload/v1791717019/Bookme_Compressed_rbunoj.mp4",
       link: "https://bookme-beryl.vercel.app/",
       github: "https://github.com/alyaah95/Bookme-Website",
+      credentials: {
+        Username: "alyaa",
+        Password: "123"
+      },
       overview: "BookMe is a full-stack accommodation reservation system built with the MERN stack. It enables users to explore, search, and book properties efficiently. The application includes dynamic availability checking, multi-criteria filtering, user authentication, and a full-featured admin dashboard for managing listings and system reservations.",
       challenges: [
         "Designing a scalable NoSQL database schema in MongoDB for complex booking and availability relationships.",
@@ -71,6 +87,10 @@ const ProjectsSection = () => {
       video: "https://res.cloudinary.com/dg4tzyfar/video/upload/v1791711353/my_cartBliss_completed_uch6gf.mp4",
       link: "https://mycart-bliss.vercel.app/",
       github: "https://github.com/alyaah95/e-commerce_website",
+      credentials: {
+        Email: "john@gmail.com",
+        Password: "johnDoe123**"
+      },
       overview: "MyCart Bliss is a feature-rich e-commerce platform developed with Node.js, Express, React, and Neon PostgreSQL. It covers end-to-end shopping operations including user authentication, real-time cart state management, dynamic product cataloging, and a simulated bank payment gateway integration for mock checkout flows.",
       challenges: [
         "Integrating a simulated banking payment gateway to handle mock checkout flows securely.",
@@ -88,12 +108,8 @@ const ProjectsSection = () => {
 
   const handleCloseModal = () => {
     setShowModal(false);
-    setVideoEnlarged(false);
+    if (videoRef.current) videoRef.current.pause(); // stop playback on close
     setTimeout(() => setSelectedProject(null), 300);
-  };
-
-  const toggleVideoSize = () => {
-    setVideoEnlarged(!videoEnlarged);
   };
 
   return (
@@ -215,11 +231,47 @@ const ProjectsSection = () => {
           </div>
         )}
       </div>
+      {/* 🔑 قسم بيانات الدخول (Credentials) - متوافق مع الحساب الواحد أو الحسابات المتعددة */}
+      {selectedProject.credentials && (
+        <div className="modal-section credentials-box" style={{ background: 'var(--bg-primary)', padding: '15px 20px', borderRadius: '8px', border: '1px dashed var(--accent-color, #6c63ff)', margin: '20px 0' }}>
+          <h5 style={{ color: 'var(--text-color)', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <i className="fas fa-key" style={{ color: '#47556990' }}></i> Test Credentials
+          </h5>
+
+          {/* التحقق إذا كان المشروع يحتوي على أكتر من حساب فرعي (مثل GovInspect) */}
+          {Object.values(selectedProject.credentials).every(val => typeof val === 'object' && val !== null) ? (
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+              {Object.entries(selectedProject.credentials).map(([roleName, accountDetails], idx) => (
+                <div key={idx} style={{ background: 'rgba(255, 255, 255, 0.05)', padding: '10px 15px', borderRadius: '6px', borderLeft: '3px solid var(--accent-color, #6c63ff)' }}>
+                  <strong style={{ display: 'block', marginBottom: '4px', color: 'var(--text-primary)' }}>{roleName}:</strong>
+                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '15px', fontSize: '0.95rem' }}>
+                    {Object.entries(accountDetails).map(([key, value], i) => (
+                      <span key={i}>
+                        {key}: <code style={{ background: '#47556913', padding: '2px 6px', borderRadius: '4px' }}>{value}</code>
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          ) : (
+            /* لو حساب تجريبي واحد مباشر (مثل BookMe أو MyCart Bliss) */
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px', fontSize: '0.95rem' }}>
+              {Object.entries(selectedProject.credentials).map(([key, value], idx) => (
+                <span key={idx}>
+                  {key}: <code style={{ background: 'rgba(0,0,0,0.2)', padding: '2px 6px', borderRadius: '4px' }}>{value}</code>
+                </span>
+              ))}
+            </div>
+          )}
+        </div>
+      )}
 
       <div className="modal-section">
         <h5>Project Overview</h5>
         <p>{selectedProject.overview}</p>
       </div>
+      
 
       <div className="modal-section">
         <h5>Technical Challenges</h5>

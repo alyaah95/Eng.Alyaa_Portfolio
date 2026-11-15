@@ -1,5 +1,5 @@
 .skills-section {
-    scroll-margin-top: var(--spacing-xl);
+    scroll-margin-top: 80px;
     padding: var(--spacing-3xl) 0;
     background-color: var(--bg-secondary);
     
@@ -162,12 +162,12 @@
     border-color: var(--accent-color);
 }
 
-/* إزاحة كل كروت المهارات ناحية اليمين بالمسافة اللي تعجبك */
-.skills-section .row.justify-content-center {
-    transform: translateX(36px);
-    /* زودي أو قللي الـ 25px دي لحد ما تظبط تماماً */
-}
 
+@media (min-width: 1200px) {
+    .skills-section .row.justify-content-center {
+        transform: translateX(36px);
+    }
+}
 
 /* Responsive Design */
 @media (max-width: 992px) {
